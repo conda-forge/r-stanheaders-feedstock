@@ -1,4 +1,4 @@
-{% set version = '2.14.0-1' %}
+{% set version = '2.15.0-1' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -14,7 +14,7 @@ source:
     - https://cran.r-project.org/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
 
 
-  sha256: b4d7223ed470e9c86d72599b355b07978c57360b409938de49a4c86a8f1aa2a3
+  sha256: eea2412909bba4bdf80fe7d2c62e9d248a20c3fc644fb0a09b892954dd386f48
 
 build:
   number: 0
