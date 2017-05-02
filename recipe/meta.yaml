@@ -12,13 +12,10 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/StanHeaders_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
-
-
   sha256: eea2412909bba4bdf80fe7d2c62e9d248a20c3fc644fb0a09b892954dd386f48
 
 build:
   number: 0
-
   rpaths:
     - lib/R/lib/
     - lib/
@@ -60,8 +57,8 @@ about:
   license_family: BSD
   license_file: LICENSE
 
-
-
 extra:
   recipe-maintainers:
     - croth1
+    - bgruening
+    - johanneskoester
