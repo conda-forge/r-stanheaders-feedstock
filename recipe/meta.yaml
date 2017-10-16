@@ -36,8 +36,6 @@ test:
     - $R -e "library('StanHeaders')"  # [not win]
     - "\"%R%\" -e \"library('StanHeaders')\""  # [win]
 
-
-
 about:
   home: http://mc-stan.org/
   license: BSD_3_clause
