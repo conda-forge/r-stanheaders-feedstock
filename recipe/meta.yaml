@@ -1,5 +1,4 @@
-{% set version = "2.17.2" %}
-
+{% set version = '2.17.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,34 +9,37 @@ package:
 source:
   fn: StanHeaders_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/StanHeaders_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/StanHeaders_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
   sha256: 6cc72104d155a6a84c22b6962db45c7051b9555970977bcd7c330ff35361cc85
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 2
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: True  # [win32]
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('cxx') }}        # [unix]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
-
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
 
 test:
   commands:
-    - $R -e "library('StanHeaders')"  # [not win]
+    - $R -e "library('StanHeaders')"           # [not win]
     - "\"%R%\" -e \"library('StanHeaders')\""  # [win]
 
 about:
@@ -57,11 +59,14 @@ about:
     for the Stan language. The 'rstan' package provides user-facing R functions to parse,
     compile, test, estimate, and analyze Stan models.
   license_family: BSD
-  license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - croth1
-    - bgruening
-    - johanneskoester
     - mdehollander
+    - johanneskoester
+    - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
