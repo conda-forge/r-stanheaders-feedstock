@@ -1,4 +1,4 @@
-{% set version = "2.19.0" %}
+{% set version = '2.19.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -60,6 +60,9 @@ about:
     Stan language. The 'rstan' package provides user-facing R functions to parse, compile,
     test, estimate, and analyze Stan models.
   license_family: BSD
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_3_clause'
+    - LICENSE
 
 extra:
   recipe-maintainers:
@@ -68,7 +71,7 @@ extra:
     - mdehollander
 
 # Package: StanHeaders
-# Date: 2019-06-13
+# Date: 2019-09-05
 # Title: C++ Header Files for Stan
 # Authors@R: c(person("Ben",family="Goodrich", email="benjamin.goodrich@columbia.edu", role=c('cre','aut')), person("Joshua", "Pritikin", role = "ctb"), person("Andrew", "Gelman", role = "aut"), person("Bob", "Carpenter",  role = "aut"), person("Matt", "Hoffman", role = "aut"), person("Daniel", "Lee", role = "aut"), person("Michael", "Betancourt", role = "aut"), person("Marcus", "Brubaker", role = "aut"), person("Jiqiang", "Guo", role = "aut"), person("Peter", "Li", role = "aut"), person("Allen", "Riddell", role = "aut"), person("Marco", "Inacio", role = "aut"), person("Mitzi", "Morris", role = "aut"), person("Jeffrey", "Arnold", role = "aut"), person("Rob", "Goedman", role = "aut"), person("Brian", "Lau", role = "aut"), person("Rob", "Trangucci", role = "aut"), person("Jonah", "Gabry", role = "aut"), person("Alp", "Kucukelbir", role = "aut"), person("Robert", "Grant", role = "aut"), person("Dustin", "Tran", role = "aut"), person("Michael", "Malecki", role = "aut"), person("Yuanjun", "Gao", role = "aut"), person("Trustees of", "Columbia University", role = "cph"), person("Lawrence Livermore", "National Security", role = "cph", comment = "CVODES"), person("The Regents of the", "University of California", role = "cph", comment = "CVODES"), person("Southern Methodist", "University", role = "cph", comment = "CVODES"))
 # URL: http://mc-stan.org/
@@ -77,11 +80,11 @@ extra:
 # VignetteBuilder: knitr
 # SystemRequirements: pandoc
 # Depends: R (>= 3.4.0)
-# Version: 2.18.1-10
+# Version: 2.19.0
 # License: BSD_3_clause + file LICENSE
 # NeedsCompilation: yes
-# Packaged: 2019-06-13 14:02:32 UTC; ben
+# Packaged: 2019-09-05 18:28:20 UTC; ben
 # Author: Ben Goodrich [cre, aut], Joshua Pritikin [ctb], Andrew Gelman [aut], Bob Carpenter [aut], Matt Hoffman [aut], Daniel Lee [aut], Michael Betancourt [aut], Marcus Brubaker [aut], Jiqiang Guo [aut], Peter Li [aut], Allen Riddell [aut], Marco Inacio [aut], Mitzi Morris [aut], Jeffrey Arnold [aut], Rob Goedman [aut], Brian Lau [aut], Rob Trangucci [aut], Jonah Gabry [aut], Alp Kucukelbir [aut], Robert Grant [aut], Dustin Tran [aut], Michael Malecki [aut], Yuanjun Gao [aut], Trustees of Columbia University [cph], Lawrence Livermore National Security [cph] (CVODES), The Regents of the University of California [cph] (CVODES), Southern Methodist University [cph] (CVODES)
 # Maintainer: Ben Goodrich <benjamin.goodrich@columbia.edu>
 # Repository: CRAN
-# Date/Publication: 2019-06-14 07:10:17 UTC
+# Date/Publication: 2019-09-07 07:00:17 UTC
