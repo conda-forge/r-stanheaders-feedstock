@@ -3,7 +3,7 @@ About r-stanheaders
 
 Home: http://mc-stan.org/
 
-Package license: BSD_3_clause
+Package license: BSD-3-clause
 
 Feedstock license: BSD 3-Clause
 
