@@ -1,4 +1,4 @@
-{% set version = "2.21.0-5" %}
+{% set version = "2.21.0-6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/StanHeaders_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
-  sha256: 20a08317e25be667599e5b2a1d7394ea1df96950e9b422d52a2af543ba80d7ff
+  sha256: a0282a054d0e6ab310ec7edcffa953b77c7e4a858d9ac7028aab1b4fb4ce8cf3
 
 build:
   merge_build_host: true  # [win]
@@ -49,7 +49,7 @@ test:
 
 about:
   home: http://mc-stan.org/
-  license: BSD-3-clause
+  license: BSD-3-Clause
   summary: The C++ header files of the Stan project are provided by this package, but it contains little R code or documentation. The main reference is the vignette. There is a shared object containing part of the 'CVODES' library, but its functionality is not accessible from R. 'StanHeaders' is only useful for developers
     who want to utilize the 'LinkingTo' directive of their package's DESCRIPTION file to build on the Stan library without incurring unnecessary dependencies. The Stan project develops a probabilistic programming language that implements full or approximate Bayesian statistical inference via Markov Chain Monte Carlo or 'variational'
     methods and implements (optionally penalized) maximum likelihood estimation via optimization. The Stan library includes an advanced automatic differentiation scheme, 'templated' statistical and linear algebra functions that can handle the automatically 'differentiable' scalar types (and doubles, 'ints', etc.), and a
