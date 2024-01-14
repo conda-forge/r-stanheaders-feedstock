@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PKG_CFLAGS="--std=gnu99"
+export PKG_CFLAGS="--std=gnu11"
 export DISABLE_AUTOBREW=1
 
 # shellcheck disable=SC2086
