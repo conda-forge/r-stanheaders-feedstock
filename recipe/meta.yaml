@@ -1,4 +1,4 @@
-{% set version = "2.32.6" %}
+{% set version = "2.32.7" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/StanHeaders_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
-  sha256: 898061f5b36c9e68cf5d8f1129a52534bc8b26b515e5dd247140de5820cbe1a2
+  sha256: ee7a013033cff5d8da6a93972286c1094d7752833da1f2a3cf4496af28c08fb6
 
 build:
   merge_build_host: true  # [win]
@@ -25,7 +25,9 @@ requirements:
     - r-rcppparallel             # [build_platform != target_platform]
     - r-rcppeigen                # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("c") }}                # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ compiler('fortran') }}        # [not win]
