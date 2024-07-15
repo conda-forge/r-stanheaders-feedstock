@@ -1,4 +1,4 @@
-{% set version = "2.32.9" %}
+{% set version = "2.32.10" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/StanHeaders_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
-  sha256: 27b0feb34e1200193e3a31a951d28c5adc91c93dc0454732545b8078132e0b33
+  sha256: c3125b8d7dc4c6b7082258b2fa6c9530c2e4714c89ffd08b8e72f4c9f4108582
 
 build:
   merge_build_host: true  # [win]
