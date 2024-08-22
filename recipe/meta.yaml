@@ -1,6 +1,5 @@
 {% set version = "2.32.10" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-stanheaders
@@ -13,8 +12,7 @@ source:
   sha256: c3125b8d7dc4c6b7082258b2fa6c9530c2e4714c89ffd08b8e72f4c9f4108582
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -43,7 +41,6 @@ requirements:
     - r-rcppparallel >=5.1.4
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-rcppeigen >=0.3.4.0.0
     - r-rcppparallel >=5.1.4
 
