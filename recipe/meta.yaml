@@ -10,6 +10,8 @@ source:
     - {{ cran_mirror }}/src/contrib/StanHeaders_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
   sha256: c3125b8d7dc4c6b7082258b2fa6c9530c2e4714c89ffd08b8e72f4c9f4108582
+  patches:
+    - sundials_noprofile.patch  # [win]
 
 build:
   number: 1
