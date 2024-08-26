@@ -1,4 +1,4 @@
-{% set version = "2.32.10" %}
+{% set version = "2.35.0.9000" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -6,15 +6,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  url:
-    - {{ cran_mirror }}/src/contrib/StanHeaders_{{ version }}.tar.gz
-    - {{ cran_mirror }}/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
-  sha256: c3125b8d7dc4c6b7082258b2fa6c9530c2e4714c89ffd08b8e72f4c9f4108582
+  url: https://stan-dev.r-universe.dev/src/contrib/StanHeaders_{{ version }}.tar.gz
+  ## note these are not stable and get periodically rebuilt: see https://github.com/r-universe-org/help/discussions/262
+  ## an official md5 checksum can be retrieved from: https://stan-dev.r-universe.dev/api/packages
+  sha256: 543ca25a96a3c7f8dff1086107da644a7176378df2820cf6d14be453e6125d3e
   patches:
     - sundials_noprofile.patch  # [win]
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
