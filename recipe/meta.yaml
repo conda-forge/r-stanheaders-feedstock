@@ -14,7 +14,7 @@ source:
     - sundials_noprofile.patch  # [win]
 
 build:
-  number: 2
+  number: 3
   rpaths:
     - lib/R/lib/
     - lib/
@@ -41,6 +41,7 @@ requirements:
     - r-base
     - r-rcppeigen >=0.3.4.0.0
     - r-rcppparallel >=5.1.4
+    - tbb-devel                        # [not win]
   run:
     - r-base
     - r-rcppeigen >=0.3.4.0.0
