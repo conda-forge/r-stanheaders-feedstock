@@ -1,4 +1,4 @@
-{% set version = "2.39.1" %}
+{% set version = "2.39.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/StanHeaders_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/StanHeaders/StanHeaders_{{ version }}.tar.gz
-  sha256: db87db967b6c908d1bf841cc667c3298648b067b060c3395ebc288287eec206b
+  sha256: 025e433e64f94667f3649466a8c2d45da64af05308e884959dea09b71eada706
   patches:
     - sundials_noprofile.patch  # [win]
 
